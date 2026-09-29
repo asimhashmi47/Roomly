@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+@theme {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+
+  /* Neutrals are tinted a few degrees toward the brand blue (hue 262). */
+  --color-canvas: oklch(0.982 0.005 262);
+  --color-surface: oklch(1 0 0);
+  --color-sunken: oklch(0.962 0.008 262);
+  --color-line: oklch(0.915 0.01 262);
+  --color-line-strong: oklch(0.85 0.014 262);
+  --color-ink: oklch(0.25 0.045 265);
+  --color-ink-2: oklch(0.42 0.035 265);
+  --color-muted: oklch(0.52 0.03 265);
+
+  --color-primary: oklch(0.52 0.2 262);
+  --color-primary-hover: oklch(0.46 0.2 262);
+  --color-primary-soft: oklch(0.955 0.03 262);
+  --color-primary-ink: oklch(0.4 0.17 262);
+  --color-accent: oklch(0.5 0.19 285);
+  --color-accent-soft: oklch(0.955 0.03 285);
+  --color-accent-ink: oklch(0.4 0.17 285);
+  --color-ok: oklch(0.55 0.12 170);
+  --color-ok-soft: oklch(0.955 0.04 170);
+  --color-ok-ink: oklch(0.39 0.09 170);
+  --color-warn: oklch(0.75 0.15 75);
+  --color-warn-soft: oklch(0.965 0.05 88);
+  --color-warn-ink: oklch(0.44 0.1 65);
+  --color-danger: oklch(0.53 0.2 25);
+  --color-danger-hover: oklch(0.47 0.2 25);
+  --color-danger-soft: oklch(0.965 0.03 25);
+  --color-danger-ink: oklch(0.42 0.17 25);
+
+  --shadow-card: 0 1px 2px oklch(0.25 0.045 265 / 0.05), 0 1px 1px oklch(0.25 0.045 265 / 0.03);
+  --shadow-pop: 0 12px 32px -8px oklch(0.25 0.045 265 / 0.18), 0 2px 6px oklch(0.25 0.045 265 / 0.06);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  button:not(:disabled),
+  [role='button'] {
+    cursor: pointer;
+  }
+}
